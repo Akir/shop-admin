@@ -28,7 +28,18 @@ insert into brand values(seq_brand.nextval,'OPPO','OPPO...');
 insert into brand values(seq_brand.nextval,'VIVO','VIVO...');
 insert into brand values(seq_brand.nextval,'索尼','索尼...');
 
-
+insert into cellphone(cellphone_id,cellphone_model,cellphone_os,cellphone_cpu,cellphone_storage,
+cellphone_price,brand_id,cellphone_description) 
+values(seq_cellphone.nextval, 'iPhone X', 'iOS', '苹果', 64, 759900, 2, 'iPhone X...');
+insert into cellphone(cellphone_id,cellphone_model,cellphone_os,cellphone_cpu,cellphone_storage,
+cellphone_price,brand_id,cellphone_description) 
+values(seq_cellphone.nextval, 'iPhone 8 Plus', 'iOS', '苹果', 64, 569900, 2, 'iPhone 8 Plus...');
+insert into cellphone(cellphone_id,cellphone_model,cellphone_os,cellphone_cpu,cellphone_storage,
+cellphone_price,brand_id,cellphone_description) 
+values(seq_cellphone.nextval, '小米8', 'Android', '高通', 64, 269900, 4, '小米8...');
+insert into cellphone(cellphone_id,cellphone_model,cellphone_os,cellphone_cpu,cellphone_storage,
+cellphone_price,brand_id,cellphone_description) 
+values(seq_cellphone.nextval, 'HUAWEI P20 Pro', 'Android', '海思', 64, 498800, 5, 'HUAWEI P20 Pro...');
 
 
 
