@@ -5,5 +5,6 @@ import shop.model.CellPhone;
 public interface CellPhoneMapper {
 
 	void create(CellPhone cellPhone);
-
+	
+	void delete(long id);
 }

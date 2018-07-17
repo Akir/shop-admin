@@ -8,6 +8,10 @@
 		insert into cellphone values(seq_cellphone.nextval,#{model},#{os},
 		#{cpu}, #{ram}, #{storage}, #{color}, #{price}, #{brand.id}, #{description})	
 	</insert>
+	
+	<delete id="delete">
+		delete from CELLPHONE where CELLPHONE_ID = #{id}
+	</delete>
 
 </mapper>
 
