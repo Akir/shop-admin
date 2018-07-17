@@ -12,6 +12,15 @@
 	<delete id="delete">
 		delete from CELLPHONE where CELLPHONE_ID = #{id}
 	</delete>
+	
+	<update id="update">
+		update CELLPHONE set CELLPHONE_ID = #{id}, CELLPHONE_MODEL = #{model},
+		CELLPHONE_OS = #{os}, CELLPHONE_CPU = #{cpu}, CELLPHONE_ram = #{ram},
+		CELLPHONE_storage = #{storage}, CELLPHONE_color = #{color},
+		CELLPHONE_price = #{price}, CELLPHONE_DESCRIPTION = #{description},
+		BRAND_ID = #{brand.id}
+		where CELLPHONE_ID = #{id}
+	</update>
 
 </mapper>
 
