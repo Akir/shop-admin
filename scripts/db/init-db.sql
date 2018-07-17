@@ -20,6 +20,14 @@ create table cellphone(
 create sequence seq_cellphone;
 create sequence seq_brand;
 
+insert into brand values(seq_brand.nextval,'苹果','苹果...');
+insert into brand values(seq_brand.nextval,'三星','三星...');
+insert into brand values(seq_brand.nextval,'小米','小米...');
+insert into brand values(seq_brand.nextval,'华为','华为...');
+insert into brand values(seq_brand.nextval,'OPPO','OPPO...');
+insert into brand values(seq_brand.nextval,'VIVO','VIVO...');
+insert into brand values(seq_brand.nextval,'索尼','索尼...');
+
 
 
 
