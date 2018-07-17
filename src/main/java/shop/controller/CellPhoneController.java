@@ -28,7 +28,7 @@ public class CellPhoneController {
 	@RequestMapping(method = RequestMethod.POST, value = "/CellPhone/add")
 	public String create(@ModelAttribute CellPhone cellPhone) {
 		cellPhoneService.create(cellPhone);
-		return "";
+		return "redirect:/CellPhone";
 	}
 	
 	@RequestMapping(method = RequestMethod.GET, value = "/CellPhone")
@@ -41,5 +41,11 @@ public class CellPhoneController {
 	public String detail(@PathVariable long id, Model model) {
 		model.addAttribute("CellPhone", cellPhoneService.findOne(id));
 		return "CellPhone-detail";
+	}
+	
+	@RequestMapping(method = RequestMethod.GET, value = "/CellPhone/{id}/delete")
+	public String delete(@PathVariable long id) {
+		cellPhoneService.delete(id);
+		return "redirect:/CellPhone";
 	}
 }

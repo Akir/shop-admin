@@ -10,4 +10,6 @@ public interface CellPhoneService {
 	List<CellPhone> findAll();
 
 	CellPhone findOne(long id);
+
+	void delete(long id);
 }

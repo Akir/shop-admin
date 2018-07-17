@@ -12,7 +12,12 @@
 	<h1>CellPhone List</h1>
 	<ul>
 		<c:forEach items="${CellPhones }" var="CellPhone">
-			<li>#${CellPhone.id } <a href="${contextPath }/CellPhone/${CellPhone.id}">${CellPhone.model }</a></li>
+			<li>#${CellPhone.id } 
+				<a href="${contextPath }/CellPhone/${CellPhone.id}">
+					${CellPhone.model }
+				</a>
+				<a href="${contextPath }/CellPhone/${CellPhone.id}/delete">[删除]</a>
+			</li>
 		</c:forEach>
 	</ul>
 </body>

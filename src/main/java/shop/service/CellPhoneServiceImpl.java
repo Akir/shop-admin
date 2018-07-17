@@ -32,4 +32,9 @@ public class CellPhoneServiceImpl implements CellPhoneService {
 	public CellPhone findOne(long id) {
 		return cellPhoneMapper.findOne(id);
 	}
+
+	@Override
+	public void delete(long id) {
+		cellPhoneMapper.delete(id);
+	}
 }
