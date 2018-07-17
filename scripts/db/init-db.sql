@@ -17,6 +17,8 @@ create table cellphone(
        brand_id number references brand(brand_id) not null,
        cellphone_description varchar2(1000)
 );
+create sequence seq_cellphone;
+create sequence seq_brand;
 
 
 
