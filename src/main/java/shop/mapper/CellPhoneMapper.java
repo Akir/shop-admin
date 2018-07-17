@@ -1,5 +1,7 @@
 package shop.mapper;
 
+import java.util.List;
+
 import shop.model.CellPhone;
 
 public interface CellPhoneMapper {
@@ -11,4 +13,6 @@ public interface CellPhoneMapper {
 	void update(CellPhone cellPhone);
 	
 	CellPhone findOne(long id);
+	
+	List<CellPhone> findAll();
 }

@@ -27,6 +27,11 @@
 		inner join BRAND b on b.BRAND_ID = c.BRAND_ID
 		where CELLPHONE_ID = #{id}
 	</select>
+	
+	<select id="findAll" resultMap="CellPhone">
+		select * from CELLPHONE c
+		inner join BRAND b on b.BRAND_ID = c.BRAND_ID
+	</select>
 
 	<resultMap type="shop.model.CellPhone" id="CellPhone">
 		<id column="CELLPHONE_ID" property="id"/>
