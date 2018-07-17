@@ -8,26 +8,30 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import shop.model.CellPhone;
+import shop.controller.form.CellPhoneForm;
+import shop.service.BrandService;
 import shop.service.CellPhoneService;
 
 @Controller
 public class CellPhoneController {
 	private CellPhoneService cellPhoneService;
+	private BrandService brandService;
 
 	@Autowired
-	public CellPhoneController(CellPhoneService cellPhoneService) {
+	public CellPhoneController(CellPhoneService cellPhoneService, BrandService brandService) {
 		this.cellPhoneService = cellPhoneService;
+		this.brandService = brandService;
 	}
-	
+
 	@RequestMapping(method = RequestMethod.GET, value = "/CellPhone/add")
-	public String add(@ModelAttribute CellPhone cellPhone) {
+	public String add(@ModelAttribute CellPhoneForm cellPhoneForm, Model model) {
+		model.addAttribute("brand", brandService.findAll());
 		return "CellPhone-add";
 	}
 	
 	@RequestMapping(method = RequestMethod.POST, value = "/CellPhone/add")
-	public String create(@ModelAttribute CellPhone cellPhone) {
-		cellPhoneService.create(cellPhone);
+	public String create(@ModelAttribute CellPhoneForm cellPhoneForm) {
+		cellPhoneService.create(cellPhoneForm.toCellPhone());
 		return "redirect:/CellPhone";
 	}
 	

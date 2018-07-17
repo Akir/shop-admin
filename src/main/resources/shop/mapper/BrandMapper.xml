@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="shop.mapper.BrandMapper">
+	<select id="findAll" resultMap="Brand">
+		select * from BRAND
+	</select>
+	<resultMap type="shop.model.Brand" id="Brand">
+		<id column="BRAND_ID" property="id"/>
+		<result column="BRAND_NAME" property="name"/>
+		<result column="BRAND_DESCRIPTION" property="description"/>
+	</resultMap>
+</mapper>
+
+
+
+
+
