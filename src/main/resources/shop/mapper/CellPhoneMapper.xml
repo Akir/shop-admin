@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="shop.mapper.CellPhoneMapper">
+	<insert id="create" useGeneratedKeys="true" keyColumn="CELLPHONE_ID" keyProperty="id">
+		insert into cellphone values(seq_cellphone.nextval,#{model},#{os},
+		#{cpu}, #{ram}, #{storage}, #{color}, #{price}, #{brand.id}, #{description})	
+	</insert>
+
+</mapper>
+
+
+
+
+
+
+

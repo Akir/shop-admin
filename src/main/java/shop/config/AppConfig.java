@@ -17,12 +17,10 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.transaction.PlatformTransactionManager;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 import org.springframework.web.servlet.config.annotation.DefaultServletHandlerConfigurer;
-import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.config.annotation.ViewResolverRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurationSupport;
 
 @Configuration
-@EnableWebMvc
 @ComponentScan("shop")
 @MapperScan("shop.mapper")
 @PropertySource("classpath:shop/jdbc.properties")
@@ -30,12 +28,12 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurationSupp
 public class AppConfig extends WebMvcConfigurationSupport {
 
 	@Override
-	protected void configureDefaultServletHandling(DefaultServletHandlerConfigurer configurer) {
+	public void configureDefaultServletHandling(DefaultServletHandlerConfigurer configurer) {
 		configurer.enable();
 	}
 
 	@Override
-	protected void configureViewResolvers(ViewResolverRegistry registry) {
+	public void configureViewResolvers(ViewResolverRegistry registry) {
 		registry.jsp("/WEB-INF/jsp/", ".jsp");
 	}
 	
