@@ -21,7 +21,29 @@
 		BRAND_ID = #{brand.id}
 		where CELLPHONE_ID = #{id}
 	</update>
+	
+	<select id="findOne" resultMap="CellPhone">
+		select * from CELLPHONE c
+		inner join BRAND b on b.BRAND_ID = c.BRAND_ID
+		where CELLPHONE_ID = #{id}
+	</select>
 
+	<resultMap type="shop.model.CellPhone" id="CellPhone">
+		<id column="CELLPHONE_ID" property="id"/>
+		<result column="CELLPHONE_MODEL" property="model"/>
+		<result column="CELLPHONE_OS" property="os"/>
+		<result column="CELLPHONE_CPU" property="cpu"/>
+		<result column="CELLPHONE_ram" property="ram"/>
+		<result column="CELLPHONE_storage" property="storage"/>
+		<result column="CELLPHONE_color" property="color"/>
+		<result column="CELLPHONE_price" property="price"/>
+		<result column="CELLPHONE_DESCRIPTION" property="description"/>
+		<association property="brand" javaType="shop.model.Brand">
+			<id column="BRAND_ID" property="id"/>
+			<result column="BRAND_NAME" property="name"/>
+			<result column="BRAND_DESCRIPTION" property="description"/>
+		</association>
+	</resultMap>
 </mapper>
 
 

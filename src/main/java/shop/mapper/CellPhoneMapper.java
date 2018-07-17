@@ -9,4 +9,6 @@ public interface CellPhoneMapper {
 	void delete(long id);
 	
 	void update(CellPhone cellPhone);
+	
+	CellPhone findOne(long id);
 }
