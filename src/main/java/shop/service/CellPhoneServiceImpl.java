@@ -25,4 +25,9 @@ public class CellPhoneServiceImpl implements CellPhoneService {
 	public List<CellPhone> findAll() {
 		return cellPhoneMapper.findAll();
 	}
+
+	@Override
+	public CellPhone findOne(long id) {
+		return cellPhoneMapper.findOne(id);
+	}
 }

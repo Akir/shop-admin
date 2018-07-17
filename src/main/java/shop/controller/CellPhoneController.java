@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
@@ -34,5 +35,11 @@ public class CellPhoneController {
 	public String findAll(Model model) {
 		model.addAttribute("CellPhones", cellPhoneService.findAll());
 		return "CellPhone-list";
+	}
+	
+	@RequestMapping(method = RequestMethod.GET, value = "/CellPhone/{id}")
+	public String detail(@PathVariable long id, Model model) {
+		model.addAttribute("CellPhone", cellPhoneService.findOne(id));
+		return "CellPhone-detail";
 	}
 }

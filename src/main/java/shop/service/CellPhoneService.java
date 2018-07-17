@@ -8,4 +8,6 @@ public interface CellPhoneService {
 	void create(CellPhone cellPhone);
 
 	List<CellPhone> findAll();
+
+	CellPhone findOne(long id);
 }
