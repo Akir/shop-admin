@@ -49,6 +49,7 @@ create table username(
 
 create sequence seq_username;
 
+alter table username add USERNAME_DATE date;
 
 
 
