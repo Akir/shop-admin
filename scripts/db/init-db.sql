@@ -41,6 +41,17 @@ insert into cellphone(cellphone_id,cellphone_model,cellphone_os,cellphone_cpu,ce
 cellphone_price,brand_id,cellphone_description) 
 values(seq_cellphone.nextval, 'HUAWEI P20 Pro', 'Android', '海思', 64, 498800, 5, 'HUAWEI P20 Pro...');
 
+create table username(
+       USERNAME_ID number primary key,
+       USERNAME_NAME varchar2(64) not null unique,
+       USERNAME_PASSWORD varchar2(64) not null
+);
+
+
+
+
+
+
 
 
 
