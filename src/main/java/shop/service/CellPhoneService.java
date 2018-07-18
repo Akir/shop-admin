@@ -12,4 +12,6 @@ public interface CellPhoneService {
 	CellPhone findOne(long id);
 
 	void delete(long id);
+
+	void update(CellPhone cellPhone);
 }

@@ -1,5 +1,7 @@
 package shop.model;
 
+import shop.controller.form.CellPhoneForm;
+
 public class CellPhone {
 	private long id;
 	private String model;
@@ -70,5 +72,19 @@ public class CellPhone {
 	}
 	public void setBrand(Brand brand) {
 		this.brand = brand;
+	}
+	public CellPhoneForm toCellPhoneForm() {
+		CellPhoneForm cellPhoneForm = new CellPhoneForm();
+		cellPhoneForm.setId(id);
+		cellPhoneForm.setOs(os);
+		cellPhoneForm.setCpu(cpu);
+		cellPhoneForm.setModel(model);
+		cellPhoneForm.setRam(ram);
+		cellPhoneForm.setStorage(storage);
+		cellPhoneForm.setColor(color);
+		cellPhoneForm.setDescription(description);
+		cellPhoneForm.setBrandId(brand.getId());
+		cellPhoneForm.setPrice(price);
+		return cellPhoneForm;
 	}
 }

@@ -37,4 +37,10 @@ public class CellPhoneServiceImpl implements CellPhoneService {
 	public void delete(long id) {
 		cellPhoneMapper.delete(id);
 	}
+
+	@Override
+	public void update(CellPhone cellPhone) {
+		cellPhoneMapper.update(cellPhone);
+	}
+
 }

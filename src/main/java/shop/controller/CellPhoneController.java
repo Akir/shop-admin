@@ -52,4 +52,18 @@ public class CellPhoneController {
 		cellPhoneService.delete(id);
 		return "redirect:/CellPhone";
 	}
+	
+	@RequestMapping(method = RequestMethod.GET, value = "/CellPhone/edit/{id}")
+	public String edit(@PathVariable long id, Model model) {
+		CellPhoneForm cellPhoneForm = cellPhoneService.findOne(id).toCellPhoneForm();
+		model.addAttribute("cellPhoneForm", cellPhoneForm);
+		model.addAttribute("brand", brandService.findAll());
+		return "CellPhone-add";
+	}
+	
+	@RequestMapping(method = RequestMethod.POST, value = "/CellPhone/edit/{id}")
+	public String update(@ModelAttribute CellPhoneForm cellPhoneForm, @PathVariable long id) {
+		cellPhoneService.update(cellPhoneForm.toCellPhone());
+		return "redirect:/CellPhone/"+id;
+	}
 }

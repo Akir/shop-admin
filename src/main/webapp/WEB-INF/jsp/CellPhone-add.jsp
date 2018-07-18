@@ -1,14 +1,16 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<c:set var="title" value="${id == 0 ? 'CellPhone Add' : 'CellPhone Edit' }"></c:set>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>CellPhone Add</title>
+<title>${title }</title>
 </head>
 <body>
-	<h1>CellPhone Add</h1>
+	<h1>${title }</h1>
 	<form:form action="" method="post" commandName="cellPhoneForm">
 		<div>
 			<form:label path="model">Model:</form:label>
@@ -42,7 +44,7 @@
 		</div>
 		<div>
 			<form:label path="price">Price:</form:label>
-			<form:input path="price"/>
+			<form:input path="price"/><span>分</span>
 			<form:errors path="price" cssClass="form-error" />
 		</div>
 		<div>
