@@ -2,15 +2,15 @@
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<c:set var="title" value="${id == 0 ? 'CellPhone Add' : 'CellPhone Edit' }"></c:set>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>${title }</title>
-</head>
-<body>
-	<h1>${title }</h1>
+<%@ taglib prefix="t" tagdir="/WEB-INF/tags" %>
+<c:set var="contextPath" value="${pageContext.request.contextPath }"></c:set>
+<c:set var="title" value="${id != null ? 'CellPhone Edit' : 'CellPhone Add' }"></c:set>
+<t:layout title="${title }">
+	<jsp:attribute name="css">
+		<link href="${contextPath }/assets/css/form.css" rel="stylesheet">
+	</jsp:attribute>	
+	<jsp:body>
+		<h1>${title }</h1>
 	<form:form action="" method="post" commandName="cellPhoneForm">
 		<div>
 			<form:label path="model">Model:</form:label>
@@ -61,5 +61,5 @@
 			<input type="submit" value="确定">
 		</div>
 	</form:form>
-</body>
-</html>
+	</jsp:body>
+</t:layout>
