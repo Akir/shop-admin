@@ -47,6 +47,7 @@ create table username(
        USERNAME_PASSWORD varchar2(64) not null
 );
 
+create sequence seq_username;
 
 
 
