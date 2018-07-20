@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="shop.mapper.UsernameMapper">
+	<select id="findAll" resultMap="Username">
+		select * from USERNAME
+	</select>
+
+	<resultMap type="shop.model.Username" id="Username">
+		<id column="USERNAME_ID" property="id"/>
+		<result column="USERNAME_NAME" property="username"/>
+		<result column="USERNAME_PASSWORD" property="password"/>
+		<result column="USERNAME_DATE" property="date"/>
+	</resultMap>
+</mapper>
+
+
+
+
