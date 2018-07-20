@@ -51,7 +51,11 @@ create sequence seq_username;
 
 alter table username add USERNAME_DATE date;
 
-
+create table SHOPPINGCART(
+       USERNAME_ID number not null references USERNAME(USERNAME_ID),
+       CELLPHONE_ID number not null references CELLPHONE(CELLPHONE_ID),
+       QUANTITY number not null
+);
 
 
 
