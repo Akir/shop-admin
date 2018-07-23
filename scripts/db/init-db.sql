@@ -56,6 +56,8 @@ create table SHOPPINGCART(
        CELLPHONE_ID number not null references CELLPHONE(CELLPHONE_ID),
        QUANTITY number not null
 );
+alter table shoppingcart 
+ADD CONSTRAINT PK_USERNAME_ID_CELLPHONE_ID PRIMARY KEY (USERNAME_ID, CELLPHONE_ID);
 
 
 
