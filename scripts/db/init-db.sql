@@ -67,6 +67,11 @@ create table ShippingAddress(
        ADDRESS varchar2(512) not null
 );
 
-
+create table "ORDER"(
+       ORDER_ID number primary key,
+       USERNAME_ID number not null references USERNAME(USERNAME_ID),
+       SHIPPINGADDRESS_ID number not null references SHIPPINGADDRESS(SHIPPINGADDRESS_ID),
+       ORDER_TIME date not null
+);
 
 
