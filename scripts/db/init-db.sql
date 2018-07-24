@@ -74,4 +74,11 @@ create table "ORDER"(
        ORDER_TIME date not null
 );
 
+create table ORDERITEM(
+       ORDER_ID number not null references "ORDER"(ORDER_ID),
+       CELLPHONE_ID number not null references CELLPHONE(CELLPHONE_ID),
+       ORDERITEM_QUANTITY number not null,
+       constraint PK_ORDER_ID_CELLPHONE_ID primary key (ORDER_ID,CELLPHONE_ID)
+);
+
 
