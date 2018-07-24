@@ -59,7 +59,13 @@ create table SHOPPINGCART(
 alter table shoppingcart 
 ADD CONSTRAINT PK_USERNAME_ID_CELLPHONE_ID PRIMARY KEY (USERNAME_ID, CELLPHONE_ID);
 
-
+create table ShippingAddress(
+       SHIPPINGADDRESS_ID number primary key,
+       USERNAME_ID number not null references USERNAME(USERNAME_ID),
+       CONSIGNEE_NAME varchar2(64) not null,
+       PHONE_NUMBER varchar2(16) not null,
+       ADDRESS varchar2(512) not null
+);
 
 
 
