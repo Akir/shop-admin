@@ -81,4 +81,15 @@ create table ORDERITEM(
        constraint PK_ORDER_ID_CELLPHONE_ID primary key (ORDER_ID,CELLPHONE_ID)
 );
 
+create sequence seq_shippingaddress;
+create sequence seq_order;
+
+
+
+
+
+
+
+
+
 
