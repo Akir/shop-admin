@@ -1,0 +1,14 @@
+@charset "UTF-8";
+
+.table tr td{
+	text-align: center;
+	padding: 12px 24px;
+}
+
+.firstFloorTr th{
+	border-top: 2px solid black;
+}
+
+.secondFloorTr th{
+	border-top: 2px dashed gray;
+}
