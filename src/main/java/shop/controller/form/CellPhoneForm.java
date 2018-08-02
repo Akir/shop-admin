@@ -82,6 +82,7 @@ public class CellPhoneForm {
 		cellPhone.setCpu(cpu);
 		cellPhone.setRam(ram);
 		cellPhone.setStorage(storage);
+		cellPhone.setColor(color);
 		cellPhone.setPrice(price);
 		cellPhone.setDescription(description);
 		Brand brand = new Brand();
