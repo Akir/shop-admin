@@ -8,13 +8,11 @@
 	<h1>Username List</h1>
 	<table>
 		<tr><th>用户名</th><th>上次登录时间</th></tr>
-		<tr>
-			<c:forEach items="${usernames }" var="username">
+		<c:forEach items="${usernames }" var="username">
+			<tr>
 				<td>${username.username }</td>
 				<td>${username.dateFormat }</td>
-			</c:forEach>
-		</tr>
+			</tr>
+		</c:forEach>
 	</table>
-
-
 </t:layout>
